@@ -1,0 +1,279 @@
+/* General Reset */
+body {
+  margin: 0;
+  padding: 0;
+
+}
+
+
+/* Top Container (Logo and Nav) */
+.top-con {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1em;
+  flex-wrap: wrap;
+}
+
+/* Logo */
+.logo h1 {
+  font-size: 2.3em;
+  font-weight: 900;
+  color: black;
+  font-family: sans-serif;
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+/* Logo Span */
+.logo span {
+  color: #0ec597;
+}
+
+/* Navigation */
+.nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 2vw;
+  font-weight: bold;
+  font-family: sans-serif;
+  padding: 1em;
+  margin-right: 1em;
+}
+
+.nav ul li a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.nav ul li a:hover {
+  color: #0ec597;
+}
+
+/* Mid Section (Form Container) */
+.mid-con {
+  padding: 2em;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  width: 100%;
+  margin: 10vh auto;
+  text-align: center;
+}
+
+/* Horizontal Rule */
+hr {
+  border: 1px solid #ccc;
+  width: 100%;
+  margin: 20px 0;
+}
+
+/* Form Rows */
+.name-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+}
+
+/* Form Inputs */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+/* Checkbox */
+input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+/* Buttons */
+.join-btn {
+  width: 50%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid hsl(0, 0%, 80%);
+  background-color: #0ec597;
+  color: white;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.join-btn:hover {
+  background-color: #019a82;
+}
+
+.cnl-btn {
+  text-decoration: none;
+  background-color: rgb(73, 73, 73);
+  color: whitesmoke;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size: 16px;
+  width: 50%;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.cnl-btn:hover {
+  background-color: grey;
+}
+
+/* Gender Selection */
+.gender-selection {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.gender {
+  display: flex;
+  align-items: center;
+  font-family: sans-serif;
+  font-size: 16px;
+  color: black;
+  margin: 0 15px;
+}
+
+.gender input[type="radio"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: white;
+  border: 2px solid black;
+  margin-right: 10px;
+  position: relative;
+  cursor: pointer;
+}
+
+.gender input[type="radio"]:checked {
+  background-color: #0ec597;
+}
+
+.gender input[type="radio"]::before {
+  content: '';
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: white;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  transition: 0.3s;
+}
+
+.gender input[type="radio"]:checked::before {
+  background-color: #0ec597;
+}
+
+/* Responsive Layouts */
+
+/* For tablets and smaller screens */
+@media (max-width: 768px) {
+  .top-con {
+    flex-direction: column; /* Stack logo and nav */
+    align-items: center; /* Center align items */
+  }
+
+  .logo h1 {
+    font-size: 1.5em; /* Reduce logo size */
+  }
+
+  .mid-con {
+    padding: 1em; /* Reduce padding */
+    width: 100%; /* Make form wider */
+  }
+
+
+  .nav ul {
+    flex-direction: column; /* Stack nav items */
+    align-items: center; /* Center items */
+    padding: 0; /* Reset padding */
+    margin: 0; /* Reset margin */
+  }
+
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  textarea {
+    padding: 8px;
+    margin: 5px 0;
+  }
+
+  .join-btn,
+  .cnl-btn {
+    padding: 8px;
+    font-size: 14px;
+    width: auto; /* Make buttons full width */
+  }
+}
+
+/* Small Screens (Mobile) */
+@media (max-width: 480px) {
+  .top-con {
+    flex-direction: column; /* Stack logo and nav */
+    align-items: center; /* Center align items */
+  }
+  .logo h1 {
+    font-size: 1.5em; /* Reduce logo size */
+  }
+
+  .mid-con {
+    padding: 1em; /* Reduce padding */
+    width: 80%; /* Make form wider */
+  }
+
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  textarea {
+    padding: 6px; /* Further reduce padding */
+    font-size: 14px; /* Slightly smaller font size */
+  }
+
+  .join-btn,
+  .cnl-btn {
+    font-size: 12px; /* Further reduce button font size */
+    width: auto; /* Make buttons full width */
+  }
+
+  .name-row {
+    flex-direction: column; /* Stack name-row items */
+    align-items: center; /* Center align */
+  }
+
+  .name-row input[type="text"] {
+    max-width: auto; /* Ensure full width */
+  }
+
+  .gender-selection {
+    flex-direction: column; /* Stack gender options */
+    align-items: center; /* Center align */
+  }
+}
+
