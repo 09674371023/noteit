@@ -1,14 +1,18 @@
-# Use official PHP with Apache
-FROM php:8.2-apache
-
-# Install required PHP extensions
-RUN docker-php-ext-install mysqli pdo pdo_mysql
-
-# Copy your project files into Apache's default web directory
-COPY . /var/www/html/
+# Use Node.js LTS image
+FROM node:18-alpine
 
 # Set working directory
-WORKDIR /var/www/html/
+WORKDIR /app
 
-# Expose port 80 for web access
-EXPOSE 80
+# Copy package.json and install dependencies
+COPY package*.json ./
+RUN npm install --production
+
+# Copy all source files
+COPY . .
+
+# Expose port (e.g., 3000)
+EXPOSE 3000
+
+# Start the app
+CMD ["npm", "start"]
