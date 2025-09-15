@@ -1,18 +1,14 @@
-# Use Node.js LTS image
-FROM node:18-alpine
+# Use official PHP + Apache image
+FROM php:8.2-apache
+
+# Enable Apache mod_rewrite (for clean URLs if you need it)
+RUN a2enmod rewrite
+
+# Copy project files into container
+COPY . /var/www/html/
 
 # Set working directory
-WORKDIR /app
+WORKDIR /var/www/html/
 
-# Copy package.json and install dependencies
-COPY package*.json ./
-RUN npm install --production
-
-# Copy all source files
-COPY . .
-
-# Expose port (e.g., 3000)
-EXPOSE 3000
-
-# Start the app
-CMD ["npm", "start"]
+# Expose port 80 (default Apache)
+EXPOSE 80
